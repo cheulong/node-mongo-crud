@@ -1,0 +1,25 @@
+{
+  "name": "mongo-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheulong/node-mongo-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheulong/node-mongo-crud/issues"
+  },
+  "homepage": "https://github.com/cheulong/node-mongo-crud#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
