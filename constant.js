@@ -1,7 +1,17 @@
-export const ERROR_CODE = {
+const ERROR_CODE = {
   VALIDATION_ERROR: 400,
   UNAUTHORIZED: 401,
   FORBIDDEN: 403,
   NOT_FOUND: 404,
   SERVER_ERROR: 500,
 };
+
+const ERROR_TITLE = {
+  [ERROR_CODE.VALIDATION_ERROR]: "Validation Failed",
+  [ERROR_CODE.NOT_FOUND]: "Not Found",
+  [ERROR_CODE.UNAUTHORIZED]: "Unauthorized",
+  [ERROR_CODE.FORBIDDEN]: "Forbidden",
+  [ERROR_CODE.SERVER_ERROR]: "Server error",
+};
+
+export { ERROR_CODE, ERROR_TITLE };

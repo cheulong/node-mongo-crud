@@ -1,14 +1,8 @@
-import { ERROR_CODE } from "../constant.js";
+import { ERROR_CODE, ERROR_TITLE } from "../constant.js";
 
 const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : ERROR_CODE.SERVER_ERROR;
-  const ERROR_TITLE = {
-    [ERROR_CODE.VALIDATION_ERROR]: "Validation Failed",
-    [ERROR_CODE.NOT_FOUND]: "Not Found",
-    [ERROR_CODE.UNAUTHORIZED]: "Unauthorized",
-    [ERROR_CODE.FORBIDDEN]: "Forbidden",
-    [ERROR_CODE.SERVER_ERROR]: "Server error",
-  };
+
   switch (statusCode) {
     case ERROR_CODE.VALIDATION_ERROR:
       res.json({
