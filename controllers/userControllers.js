@@ -1,7 +1,16 @@
 import asyncHandler from "express-async-handler";
+import admin from "firebase-admin";
+import Todo from "../models/todo.model.js";
 
 const getUsers = async (req, res) => {
-  res.status(200).json({ message: "Get all users" });
+  const todosRef = await admin.firestore().collection("todos");
+  const data = await todosRef.get();
+  const todosArray = [];
+  data.forEach((doc) => {
+    const todo = new Todo(doc.id, doc.data().label);
+    todosArray.push(todo);
+  });
+  res.status(200).send(todosArray);
 };
 
 const getUser = async (req, res) => {
